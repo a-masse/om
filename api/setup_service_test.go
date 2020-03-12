@@ -209,7 +209,7 @@ var _ = Describe("Setup", func() {
 					}, nil)
 
 					_, err := service.EnsureAvailability(api.EnsureAvailabilityInput{})
-					Expect(err).To(MatchError("could not parse redirect url: parse %%%%%%: invalid URL escape \"%%%\""))
+					Expect(err).To(MatchError(ContainSubstring("could not parse redirect url")))
 				})
 			})
 		})
